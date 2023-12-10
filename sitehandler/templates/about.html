@@ -1,0 +1,33 @@
+{% include 'include.html' %}
+{% include 'navbar.html' %}
+{% block body %}
+{% load static %}
+<style>
+    .login-dark {
+    
+     height:100%;
+      width:100%;
+      background-size:cover;
+      position: absolute;
+      background-position: center;
+      background-repeat:no-repeat;
+    
+    }
+</style>
+    
+<div class="login-dark" style="background-image: url(&quot;{% static 'img/about2.jpg' %}&quot;);">
+
+<h1 class="text-center">About Us</h1>
+<br></br>
+
+
+<p class="text-justify" id="about-p"><ul style = "font-size: 30px;"><li>The main motive of this website is to provide a reliable service to our users with guranteed privacy.</li>
+    <li>This website holds the details of the patient to book their appointment with the doctors and can view their previous appointments, prescriptions,
+    reports etc.</li>
+<li>The doctor can view all the details of the appointments so that he can give the prescription for the patients.</li>
+    <li>The prescription details are also saved so that whenever the patient re-visits he can access the treatments taken.</li>
+<li>The Admin can ADD NEW DOCTORS, DELETE DOCTOR'S ACCOUNT and view all the appointments as well as the prescriptions given to the patients by doctors.</li></ul></p>
+
+<div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div>
+</div>
+{% endblock %}

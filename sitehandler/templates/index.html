@@ -1,0 +1,48 @@
+{% include 'include.html' %}
+{% include 'navbar.html' %}
+
+{% block body %}
+{% load static %}
+<style>
+    .login-dark {
+    
+      height:100%;
+      width:100%;
+      background-size:cover;
+      position: absolute;
+      background-position: center;
+      background-repeat:no-repeat;
+    
+    }
+    h2, h5, p, li
+    { color: #fff;}
+
+     .bg-primary
+     { background-color: #b11f91!important;}
+       
+    
+    </style>
+    
+    <div class="login-dark" style="background-image: url(&quot;{% static 'img/hosp.jpg' %}&quot;);">
+<section class="general-area-home" style= "background-color: rgba(000, 0, 0, 0.5); padding-bottom:130px";>
+ 
+        <h2><br>Book your consultation with doctor online from anywhere!</br></h2> <br>
+        <h5><i>Create an account and save your profile, then book your apppointment</i></h5>
+        <div class="row" id="row1">
+            <div class="col offset-lg-0">
+                <h2><br>New to this website..</br></h2><br><a class="btn btn-primary bg-primary" href="{% url 'createaccountpage' %}">Signup Now</a></br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="text-center">This website allows user to book an appointment with doctor.
+                    <li><i>You can view the old appointments</i></li> 
+                    <li><i>View the prescription</i></li> 
+                    <li><i>View the reports</i></li>.
+                    <a data-bs-hover-animate="flash" href="{% url 'aboutpage' %}" style= "color:#b11f91 ">For more details..</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

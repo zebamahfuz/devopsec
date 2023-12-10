@@ -1,0 +1,50 @@
+{% include 'include.html' %}
+{% include 'navbar.html' %}
+{% load static %}
+{% block content %}
+{% ifequal error "no" %}
+<script type="text/javascript">
+	alert('Logged In Sucessfully..........')
+	window.location = ('{% url 'adminhome' %}')
+</script>
+{% endifequal%}
+
+{% ifequal error "yes" %}
+<script type="text/javascript">
+	alert('Invalid Credentials..........')
+</script>
+{% endifequal%}
+<body bgcolor = "blue">
+<center>
+<img src = "{%  static 'img/loginadmin.jpg' %}" style = "height: 300px;width:300px;position:absolute; left:605px; down:1000px;">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1> Admin Login </h1>
+
+<form method="POST" >
+{% csrf_token %}
+
+<input type="text" name="username" placeholder="username" style = "font-size: 30px"  required>
+<br><br>
+<input type="password" name="password" placeholder="password" style = "font-size: 30px" required>
+<br><br>
+
+<input type="submit" value ="Login" style="border-radius: 8px; font-size: 48px;">
+<br><br>
+</form>
+</center>
+</body>
+
+
+{% endblock %}
