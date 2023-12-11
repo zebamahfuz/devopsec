@@ -12,7 +12,7 @@ colorama==0.4.3
 crispy-bootstrap4==2023.1
 cryptography==41.0.5
 defusedxml==0.7.1
-Django==3.0.4
+Django==4.2.7
 django-allauth==0.58.2
 django-crispy-forms==2.1
 django-ses==3.5.1
