@@ -6,6 +6,12 @@
     {% load static %}
 </head>
 
+<style>
+    .register-form .custom-form .submit-button {
+        border-radius: 30px; !important
+        background-color: #b21e91 !important;
+</style>
+
 <body style="background-image: url(&quot;{% static 'img/star-sky.jpg' %}&quot;);">
     
     {% include 'adminnav.html' %}
@@ -23,7 +29,7 @@
                                     <label class="col-form-label" for="name-input-field" style="color: rgb(255,255,255);">Name </label>
                                 </div>
                                 <div class="col-sm-6 input-column">
-                                    <input class="form-control" type="text" name="name">
+                                    <input class="form-control" type="text" name="name" required>
                                 </div>
                             </div>
                             <div class="form-row form-group">
@@ -31,7 +37,7 @@
                                     <label class="col-form-label" for="email-input-field" style="color: rgb(255,255,255);">Email </label>
                                 </div>
                                 <div class="col-sm-6 input-column">
-                                    <input class="form-control" type="email" name="email">
+                                    <input class="form-control" type="email" name="email" required>
                                 </div>
                             </div>
                             <div class="form-row form-group">
@@ -39,15 +45,15 @@
                                     <label class="col-form-label" for="pawssword-input-field" style="color: rgb(255,255,255);">Password </label>
                                 </div>
                                 <div class="col-sm-6 input-column">
-                                    <input class="form-control" type="password" name="password">
+                                    <input class="form-control" type="password" name="password" required>
                                 </div>
                             </div>
                             <div class="form-row form-group">
                                 <div class="col-sm-4 label-column">
-                                    <label class="col-form-label" for="repeat-pawssword-input-field" style="color: rgb(255,255,255);">Repeat Password </label>
+                                    <label class="col-form-label" for="repeat-pawssword-input-field" style="color: rgb(255,255,255);">Confirm Password </label>
                                 </div>
                                 <div class="col-sm-6 input-column">
-                                    <input class="form-control" type="password" name="repeatpasssword">
+                                    <input class="form-control" type="password" name="repeatpasssword" required>
                                 </div>
                             </div>
                             <div class="form-row form-group">
@@ -68,7 +74,7 @@
                                     <label class="col-form-label" for="name-input-field" style="color: rgb(255,255,255);">Phone Number</label>
                                 </div>
                                 <div class="col-sm-6 input-column">
-                                    <input class="form-control" type="text" name="phonenumber">
+                                    <input class="form-control" type="text" name="phonenumber" required>
                                 </div>
                             </div>
                             <div class="form-row form-group">
@@ -84,7 +90,7 @@
                                     <label class="col-form-label" for="name-input-field" style="color: rgb(255,255,255);">Birth Date</label>
                                 </div>
                                 <div class="col-sm-6 input-column">
-                                    <input class="form-control" type="date" name="dateofbirth">
+                                    <input class="form-control" type="date" name="dateofbirth" required>
                                 </div>
                             </div>
                             <div class="form-row form-group">
@@ -92,7 +98,7 @@
                                     <label class="col-form-label" for="name-input-field" style="color: rgb(255,255,255);">Blood Group</label>
                                 </div>
                                 <div class="col-sm-6 input-column">
-                                    <select class="form-control" name="bloodgroup">
+                                    <select class="form-control" name="bloodgroup" required>
                                         <optgroup label="Choose Blood Group">
                                             <option value="O+" selected="">O+</option>
                                             <option value="O-">O-</option>
