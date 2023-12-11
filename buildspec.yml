@@ -17,7 +17,7 @@ phases:
     commands:
       - echo "Starting Build Phase..."
       - echo Build started on `date`
-      - python manage.py collectstatic
+      - python manage.py collectstatic --noinput
 
   post_build:
     commands:
