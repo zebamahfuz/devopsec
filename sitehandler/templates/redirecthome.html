@@ -1,29 +1,29 @@
 {% load static %}
 
-{% ifequal error "no" %}
-    {% ifequal page "doctor" %}
+{% if error == "no" %}
+    {% if page == "doctor" %}
     <script type="text/javascript">
         alert('Logged In Sucessfully..........')
         window.location = ('{% url 'home' %}')
     </script>
-    {% endifequal %}
-    {% ifequal page "reception" %}
+    {% endif %}
+    {% if page == "reception" %}
     <script type="text/javascript">
         alert('Logged In Sucessfully..........')
         window.location = ('{% url 'home' %}')
     </script>
-    {% endifequal %}
-    {% ifequal page "patient" %}
+    {% endif %}
+    {% if page == "patient" %}
     <script type="text/javascript">
         alert('Logged In Sucessfully..........')
         window.location = ('{% url 'home' %}')
     </script>
-    {% endifequal %}
-{% endifequal%}
+    {% endif %}
+{% endif%}
 
-{% ifequal error "yes" %}
+{% if error == "yes" %}
 <script type="text/javascript">
     alert('Invalid Credentials..........')
     window.location=('{% url 'loginpage' %}')
 </script>
-{% endifequal%}
+{% endif%}

@@ -2,18 +2,18 @@
 {% include 'navbar.html' %}
 {% load static %}
 {% block content %}
-{% ifequal error "no" %}
+{% if error == "no" %}
 <script type="text/javascript">
 	alert('Logged In Sucessfully..........')
 	window.location = ('{% url 'adminhome' %}')
 </script>
-{% endifequal %}
+{% endif %}
 
-{% ifequal error "yes" %}
+{% if error == "yes" %}
 <script type="text/javascript">
 	alert('Invalid Credentials..........')
 </script>
-{% endifequal %}
+{% endif %}
 <!-- <body bgcolor = "blue">
 <center>
 <img src = "{%  static 'img/loginadmin.jpg' %}" style = "height: 300px;width:300px;position:absolute; left:605px; down:1000px;">
