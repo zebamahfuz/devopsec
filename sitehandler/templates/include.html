@@ -6,23 +6,23 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.1/esm/ionicons.min.js">
-<link rel="stylesheet" href="{% static 'css/back-to-top-scroll-1.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!-- <link rel="stylesheet" href="{% static 'css/back-to-top-scroll-1.css' %}">
 <link rel="stylesheet" href="{% static 'css/back-to-top-scroll.cs' %}s">
 <link rel="stylesheet" href="{% static 'css/Bold-BS4-Animated-Back-To-Top.css' %}">
 <link rel="stylesheet" href="{% static 'css/cards.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <link rel="stylesheet" href="{% static 'css/Login-Form-Dark.css' %}">
 <link rel="stylesheet" href="{% static 'css/Pretty-Registration-Form.css' %}">
 <link rel="stylesheet" href="{% static 'css/Sidebar-Menu-1.css' %}">
 <link rel="stylesheet" href="{% static 'css/Sidebar-Menu.css' %}">
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
 
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/back-to-top-scroll.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+<!-- <script src="{% static 'js/back-to-top-scroll.js' %}"></script>
 <script src="{% static 'js/Bold-BS4-Animated-Back-To-Top.js' %}"></script>
 <script src="{% static 'js/bs-init.js' %}"></script>
-<script src="{% static 'js/Sidebar-Menu.js' %}"></script>
+<script src="{% static 'js/Sidebar-Menu.js' %}"></script> -->
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">-->
@@ -539,3 +539,130 @@
                         
                   
 </style>
+
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        } );
+    } );
+
+    $(document).ready(function(){
+        $('[data-bs-hover-animate]')
+            .mouseenter( function(){ var elem = $(this); elem.addClass('animated ' + elem.attr('data-bs-hover-animate')) })
+            .mouseleave( function(){ var elem = $(this); elem.removeClass('animated ' + elem.attr('data-bs-hover-animate')) });
+    });
+
+    (function(){
+        var backTop = document.getElementsByClassName('js-cd-top')[0],
+            // browser window scroll (in pixels) after which the "back to top" link is shown
+            offset = 300,
+            //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+            offsetOpacity = 1200,
+            scrollDuration = 700
+            scrolling = false;
+        if( backTop ) {
+            //update back to top visibility on scrolling
+            window.addEventListener("scroll", function(event) {
+                if( !scrolling ) {
+                    scrolling = true;
+                    (!window.requestAnimationFrame) ? setTimeout(checkBackToTop, 250) : window.requestAnimationFrame(checkBackToTop);
+                }
+            });
+            //smooth scroll to top
+            backTop.addEventListener('click', function(event) {
+                event.preventDefault();
+                (!window.requestAnimationFrame) ? window.scrollTo(0, 0) : scrollTop(scrollDuration);
+            });
+        }
+    
+        function checkBackToTop() {
+            var windowTop = window.scrollY || document.documentElement.scrollTop;
+            ( windowTop > offset ) ? addClass(backTop, 'cd-top--show') : removeClass(backTop, 'cd-top--show', 'cd-top--fade-out');
+            ( windowTop > offsetOpacity ) && addClass(backTop, 'cd-top--fade-out');
+            scrolling = false;
+        }
+        
+        function scrollTop(duration) {
+            var start = window.scrollY || document.documentElement.scrollTop,
+                currentTime = null;
+                
+            var animateScroll = function(timestamp){
+                if (!currentTime) currentTime = timestamp;        
+                var progress = timestamp - currentTime;
+                var val = Math.max(Math.easeInOutQuad(progress, start, -start, duration), 0);
+                window.scrollTo(0, val);
+                if(progress < duration) {
+                    window.requestAnimationFrame(animateScroll);
+                }
+            };
+    
+            window.requestAnimationFrame(animateScroll);
+        }
+    
+        Math.easeInOutQuad = function (t, b, c, d) {
+             t /= d/2;
+            if (t < 1) return c/2*t*t + b;
+            t--;
+            return -c/2 * (t*(t-2) - 1) + b;
+        };
+    
+        //class manipulations - needed if classList is not supported
+        function hasClass(el, className) {
+              if (el.classList) return el.classList.contains(className);
+              else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+        }
+        function addClass(el, className) {
+            var classList = className.split(' ');
+             if (el.classList) el.classList.add(classList[0]);
+             else if (!hasClass(el, classList[0])) el.className += " " + classList[0];
+             if (classList.length > 1) addClass(el, classList.slice(1).join(' '));
+        }
+        function removeClass(el, className) {
+            var classList = className.split(' ');
+              if (el.classList) el.classList.remove(classList[0]);	
+              else if(hasClass(el, classList[0])) {
+                  var reg = new RegExp('(\\s|^)' + classList[0] + '(\\s|$)');
+                  el.className=el.className.replace(reg, ' ');
+              }
+              if (classList.length > 1) removeClass(el, classList.slice(1).join(' '));
+        }
+    })();
+
+    $(document).ready(function(){
+
+        $(function(){
+         
+            $(document).on( 'scroll', function(){
+         
+                if ($(window).scrollTop() > 100) {
+                    $('.scroll-top-wrapper').addClass('show');
+                } else {
+                    $('.scroll-top-wrapper').removeClass('show');
+                }
+            });
+         
+            $('.scroll-top-wrapper').on('click', scrollToTop);
+        });
+         
+        function scrollToTop() {
+            verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+            element = $('body');
+            offset = element.offset();
+            offsetTop = offset.top;
+            $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+        }
+        
+        });
+</script>
