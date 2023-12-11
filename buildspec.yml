@@ -18,6 +18,7 @@ phases:
       - echo "Starting Build Phase..."
       - echo Build started on `date`
       - python manage.py migrate
+      - python manage.py collectstatic
 
   post_build:
     commands:
