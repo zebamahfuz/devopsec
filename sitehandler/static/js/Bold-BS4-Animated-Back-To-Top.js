@@ -23,7 +23,7 @@
 
 	function checkBackToTop() {
 		var windowTop = window.scrollY || document.documentElement.scrollTop;
-		( windowTop > offset ) ? addClass(backTop, 'cd-top--show') : removeClass(backTop, 'cd-top--show', 'cd-top--fade-out');
+		( windowTop > offset ) ? addClass(backTop, 'cd-top--show') : removeClass(backTop, 'cd-top--show');
 		( windowTop > offsetOpacity ) && addClass(backTop, 'cd-top--fade-out');
 		scrolling = false;
 	}

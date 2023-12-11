@@ -33,5 +33,5 @@
         return function(event, $newFormset) {
             return $newFormset.find('.admin-autocomplete').djangoAdminSelect2();
         };
-    })(this));
+    })());
 }(django.jQuery));
