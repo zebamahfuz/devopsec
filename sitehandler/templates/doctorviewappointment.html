@@ -23,27 +23,27 @@
                             <div class = "card-body collapsible-body">
                                 <table align="center" class="card-text" style="font-size: 19px;"> <caption></caption>
                                     <tr>
-                                        <th>Doctor Name:</th>
+                                        <th id="11">Doctor Name:</th>
                                         <td>{{i.doctorname}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Patient Name:</th>
+                                        <th id="12">Patient Name:</th>
                                         <td>{{i.patientname}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Appointment Date:</th>
+                                        <th id="13"> Appointment Date:</th>
                                         <td>{{i.appointmentdate}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Appointment Time:</td>
+                                        <th id="14"> Appointment Time:</th>
                                         <td>{{i.appointmenttime}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Symptoms:</td>
+                                        <th id="15" >Symptoms:</th>
                                         <td>{{i.symptoms}}</td>
                                     </tr> 
                                     <tr>
-                                        <td>Add Prescription:</td>
+                                        <th id="16">Add Prescription:</th>
                                         <form method="post" >
                                         <td>{% csrf_token %}
                                             <textarea class="form-control" name="prescription"></textarea>
@@ -69,27 +69,27 @@
                             <div class = "card-body collapsible-body">
                                 <table align="center" class="card-text" style="font-size: 19px;"> <caption></caption>
                                     <tr>
-                                        <th>Doctor Name:</th>
+                                        <th id="17">Doctor Name:</th>
                                         <td>{{j.doctorname}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Patient Name:</th>
+                                        <th id="18">Patient Name:</th>
                                         <td>{{j.patientname}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Appointment Date:</th>
+                                        <th id="19">Appointment Date:</th>
                                         <td>{{j.appointmentdate}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Appointment Time:</th>
+                                        <th id="20">Appointment Time:</th>
                                         <td>{{j.appointmenttime}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Symptoms:</th>
+                                        <th id="21">Symptoms:</th>
                                         <td>{{j.symptoms}}</td>
                                     </tr> 
                                     <tr>
-                                        <th>Prescription</th>
+                                        <th id="22">Prescription</th>
                                         <td>{{j.prescription}}</td>
                                     </tr> 
                                 </table>
